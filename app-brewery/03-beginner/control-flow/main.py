@@ -193,25 +193,26 @@ extra_cheese = input("Do you want extra cheese? Y or N ")
 total_bill = 0
 # Write your code below this line 👇
 
+# checking the size of each pizza and adding price to each
 if size == 'S':
     total_bill += 15
 elif size == 'M':
     total_bill += 20
-elif size == 'L':
-    total_bill += 25
 else:
-    print('invalid input')
+    total_bill += 25
 
+# add $2 or $3 depending on size
 if add_pepperoni == 'Y':
     if size == 'S':
         total_bill += 2
     else:
         total_bill += 3
 
+# add $1 to all sizes
 if extra_cheese == 'Y':
     total_bill += 1
 
-print(f'your final bill is {total_bill}')
+print(f'your total bill is: {total_bill}')
 
 
 # logical operators
@@ -248,11 +249,14 @@ name2 = input("What is their name? \n")
 # 🚨 Don't change the code above 👆
 
 # Write your code below this line 👇
-# adding couples names together
+
+# combine both couples' names
 couples = name1 + name2
-# converting them to lowercase
+# convert to lowercase letters
 couples = couples.lower()
-# counting the number of times letters in true/love show up in couples
+
+# checking to see if the occurences of true/love appear
+# count is a function that counts no. of occurrences in a string
 t = couples.count('t')
 r = couples.count('r')
 u = couples.count('u')
@@ -264,13 +268,15 @@ o = couples.count('o')
 v = couples.count('v')
 e = couples.count('e')
 love = l + o + v + e
-# combining true/love: integers
+
+# turning true/love into a string for concatenation
+# converting it into an integer for comparison
 love_score = int(str(true) + str(love))
 
-if (love_score < 10) or (love_score > 90):
+if love_score < 10 or love_score > 90:
     print(
         f'your love score is {love_score}, you go together like coke and mentos')
-elif (love_score >= 40) and (love_score <= 50):
-    print(f'your score is {love_score}, you are alright together')
+elif love_score >= 40 and love_score <= 50:
+    print(f'your love score is {love_score}, you are alright together')
 else:
-    print(f'your score is {love_score}')
+    print(f'your love score is {love_score}')
