@@ -222,6 +222,7 @@ print(f'your total bill is: {total_bill}')
 
 
 """"
+####################################################################################################
 code challenge:
 You are going to write a program that tests the compatibility between two people.
 
@@ -237,8 +238,7 @@ For Love Scores between 40 and 50, the message should be:
 
 Otherwise, the message will just be their score. e.g.:
 "Your score is **z**."
-
-
+#######################################################################################################
 """
 
 
