@@ -1,7 +1,11 @@
-# Step 5
+"""
+#######################################################
+complete hangman game
+#######################################################
+"""
 
-from hangman_art import logo, stages
 import random
+from hangman_art import logo, stages
 from hangman_words import word_list
 
 # - Update the word list to use the 'word_list' from hangman_words.py
@@ -9,10 +13,10 @@ from hangman_words import word_list
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
-end_of_game = False
+still_playing = True
 lives = 6
 
-# TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+# 3: - Import the logo from hangman_art.py and print it at the start of the game.
 print(logo)
 # Testing code
 print(f'Pssst, the solution is {chosen_word}.')
@@ -22,10 +26,10 @@ display = []
 for _ in range(word_length):
     display += "_"
 
-while not end_of_game:
+while still_playing:
     guess = input("Guess a letter: ").lower()
 
-    # TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    # 4: - If the user has entered a letter they've already guessed, print the letter and let them know.
     if guess in display:
         print(f'you you already guessed {guess} please choose another')
 
@@ -43,7 +47,7 @@ while not end_of_game:
         print(f'you guessed {guess}, that\'s not in the word. you lose a life')
         lives -= 1
         if lives == 0:
-            end_of_game = True
+            still_playing = False
             print("You lose.")
 
     # Join all the elements in the list and turn it into a String.
@@ -51,8 +55,9 @@ while not end_of_game:
 
     # Check if user has got all letters.
     if "_" not in display:
-        end_of_game = True
+        still_playing = False
         print("You win.")
 
     # 2: - Import the stages from hangman_art.py and make this error go away.
-    print(stages[lives])
+    lives_left = stages[lives]
+    print(lives_left)

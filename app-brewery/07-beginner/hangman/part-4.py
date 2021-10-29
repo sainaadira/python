@@ -63,7 +63,7 @@ stages = ['''
 =========
 ''']
 
-end_of_game = False
+still_playing = True
 word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
@@ -81,7 +81,7 @@ display = []
 for _ in range(word_length):
     display += "_"
 
-while not end_of_game:
+while still_playing:
     guess = input("Guess a letter: ").lower()
 
     # Check guessed letter
@@ -97,7 +97,7 @@ while not end_of_game:
     if guess not in chosen_word:
         lives -= 1
         if lives == 0:
-            end_of_game == True
+            still_playing = False
             print('you lose')
 
     # Join all the elements in the list and turn it into a String.
@@ -105,7 +105,7 @@ while not end_of_game:
 
     # Check if user has got all letters.
     if "_" not in display:
-        end_of_game = True
+        still_playing = False
         print("you win.")
 
     # 3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
