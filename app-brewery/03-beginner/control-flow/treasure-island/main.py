@@ -34,22 +34,21 @@ print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
 choice1 = input(
-    'you\'re walking down a path that separates: go left or right \n').lower()
+    'Two paths in the jungle lead to a lake which path will you take? Type: left or right \n').lower()
 if choice1 == 'left':
-    choice2 = input(
-        'the tide is will rise sometime in the afternoon but the treasure is at the house across the lake: swim or wait? \n').lower()
+    choice2 = input('You arrive at the lake and there\'s a boat that will take you to the house where the treasure is. However, there\'s a stom coming. Do you swim or wait? Type: swim or wait \n').lower()
     if choice2 == 'wait':
         choice3 = input(
-            'you made it to the house and the treasure is behind a one of 4 doors: blue, yellow, purple or red. which one holds your fate? \n ').lower()
-        if choice3 == 'red':
-            print('you were burned by fire, game over')
-        elif choice3 == 'yellow':
-            print('you win the treasure!')
+            'You arrive at the house where the treasure lies behind one of 4 doors. Type: red, blue, yellow or purple ').lower()
+        if choice3 == 'yellow':
+            print('You win!')
+        elif choice3 == 'red':
+            print('You are burned by fire. Game over!')
         elif choice3 == 'blue':
-            print('you were eaten by beasts. game over')
-        else:
-            print('invalid color choice')
+            print('You are eaten by beasts. Game over!')
+        elif choice3 == 'purple':
+            print('Game over')
     else:
-        print('you were eaten by an angry trout: game over')
+        print('You are attacked by a trout. Game over!')
 else:
-    print('you fell into a hole, game over')
+    print('You fall into a hole. Game over!')
